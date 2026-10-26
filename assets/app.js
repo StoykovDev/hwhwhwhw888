@@ -1,0 +1,7 @@
+(function(){var b=document.getElementById('burger'),m=document.getElementById('menu'),dd=[].slice.call(document.querySelectorAll('.dd'));
+b.addEventListener('click',function(){var o=m.classList.toggle('open');b.setAttribute('aria-expanded',o);b.textContent=o?'✕':'☰'});
+dd.forEach(function(d){var h=d.querySelector('.ddb');if(h.tagName==='A')return;h.addEventListener('click',function(e){e.stopPropagation();var o=!d.classList.contains('open');dd.forEach(function(x){x.classList.remove('open')});d.classList.toggle('open',o);this.setAttribute('aria-expanded',o)})});
+document.addEventListener('click',function(){dd.forEach(function(x){x.classList.remove('open')})});
+var y=document.getElementById('y');if(y)y.textContent=new Date().getFullYear();
+var f=document.getElementById('f');if(f){var q=new URLSearchParams(location.search).get('m');if(q){for(var i=0;i<f.m.options.length;i++){if(f.m.options[i].text===q)f.m.selectedIndex=i}}
+f.addEventListener('submit',function(e){e.preventDefault();var t='Здравейте, интересувам се от: '+f.m.value+'.\n'+f.t.value+'\n\n'+f.n.value+', тел. '+f.p.value;location.href='mailto:stoiko_stoikov74@abv.bg?subject='+encodeURIComponent('Запитване – '+f.m.value)+'&body='+encodeURIComponent(t)})}})();
